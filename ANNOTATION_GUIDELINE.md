@@ -80,6 +80,47 @@
 
 ---
 
+---
+
+## 🆕 TỪ VIẾT TẮT CHƯA CÓ TRONG TỪ ĐIỂN
+
+> Nếu gặp từ viết tắt lạ mà bạn hiểu nghĩa, **đọc theo nghĩa đó để gán nhãn** — KHÔNG sửa nội dung review.
+> Ghi từ đó và nghĩa vào cột `note` để bổ sung sau.
+
+**Quy trình:**
+1. Gán nhãn theo nghĩa bạn hiểu.
+2. Ghi vào cột `note`: ví dụ `từ lạ: "đhvn" = đơn hàng về nhà`.
+3. Sau annotation, bổ sung thủ công vào `src/teencode_dict.py`.
+
+---
+
+## 🤬 TỪ CHỬI THỀ & TỪ NHẤN MẠNH
+
+### Nhóm 1 — Chửi thề trực tiếp → luôn là tín hiệu **NEGATIVE**
+> Review chứa những từ này gần như luôn thể hiện sự tức giận, phẫn nộ mạnh.
+
+| Từ gốc | Dạng viết tắt | Quy về label |
+|--------|--------------|---------------|
+| đ\*\* mẹ | dm, đm, dmm, đmm, đcm | **negative** |
+| v\*\* | vkl, cc, cặc | **negative** |
+
+**Ví dụ:**
+| Review | Label |
+|--------|-------|
+| "dm cái app này tệ vl, mất tiền oan" | **negative** |
+| "đmm giao hàng cả tháng vẫn chưa tới" | **negative** |
+
+### Nhóm 2 — Từ nhấn mạnh cường điệu (vl, vcl, vch) → theo từ được bổ nghĩa
+> Những từ này chỉ là cách nói cường điệu, bản thân chúng không quyết định sentiment.
+
+| Review | Label | Giải thích |
+|--------|-------|------------|
+| "xịn vl, giao nhanh vl" | **positive** | vl bổ nghĩa cho tích cực |
+| "lag vl, chậm vl" | **negative** | vl bổ nghĩa cho tiêu cực |
+| "bt thôi, cũng vl" | **neutral** | không rõ |
+
+---
+
 ## 🚫 LOẠI BỎ — Ghi "skip" vào cột note
 - Không phải tiếng Việt
 - Chỉ có emoji, không có chữ
