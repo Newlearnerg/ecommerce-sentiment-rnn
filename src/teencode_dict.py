@@ -2,6 +2,9 @@
 
 TEENCODE_DICT = {
     # Viết tắt phổ biến
+    "cs"      : "có",
+    "cx"      : "cũng",
+    "qc"      : "quảng cáo",
     "ko"      : "không",
     "k"       : "không",
     "kh"      : "không",
@@ -13,6 +16,7 @@ TEENCODE_DICT = {
     "vd"      : "ví dụ",
     "ntn"     : "như thế nào",
     "nt"      : "nhắn tin",
+    "mak"     : "mà",
     "mk"      : "mình",
     "mik"     : "mình",
     "m"       : "mình",
@@ -52,6 +56,16 @@ TEENCODE_DICT = {
     "cod"     : "thanh toán khi nhận hàng",
     "hvc"     : "hàng về chậm",
     "lx"      : "liên xỉu",
+    "sdt"     : "số điện thoại",
+    "nx"      : "nữa",
+    "chx"     : "chưa",
+    "r"       : "rồi",
+    "sd"      : "sử dụng",
+    "ng"      : "người",
+    "s"      : "sao",
+    "thui"    : "thôi",
+    "j"       : "gì",
+    "xog"     : "xong",
     # Cảm xúc / Đánh giá
     "ok"      : "ổn",
     "oce"     : "ổn",
@@ -80,6 +94,7 @@ TEENCODE_DICT = {
     "nản"     : "thất vọng",
     "tệ"      : "tệ",
     "chán"    : "thất vọng",
+
     # Chửi thề / Từ nhấn mạnh tiêu cực
     # Nhóm này là tín hiệu NEGATIVE rất mạnh — xem hướng dẫn annotation
     "dm"      : "thất vọng tức giận",
@@ -92,8 +107,15 @@ TEENCODE_DICT = {
     "vkl"     : "rất tệ",
     "cc"      : "rất tệ",
     "cặc"     : "rất tệ",
+    "cak"     : "rất tệ",
     "cl"      : "rất tệ",
-    "lol"     : "buồn cười",
+    "lol"     : "rất tệ",
+    "lồn"     : "rất tệ",
+    "đéo"     : "rất tệ",
+    "đéo hiểu" : "rất tệ",
+    "deo"     : "rất tệ",
+
+
     # Thời gian
     "nay"     : "hôm nay",
     "qua"     : "hôm qua",

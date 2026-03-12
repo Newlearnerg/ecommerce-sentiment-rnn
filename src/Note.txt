@@ -1,0 +1,5 @@
+- Có một số đánh giá viết sai như "muốn" thành "mướn" hoặc gõ nhầm như "tooi khoong thicsh" không phải chỗ để xử lý, vì:
+
+Không thể liệt kê hết — typo ngẫu nhiên có vô số biến thể, không ai gõ sai theo một pattern cố định.
+Sai chính tả ≠ teencode — teencode là cách viết tắt có chủ ý, được cộng đồng dùng lặp lại. Typo là lỗi không chủ ý, không lặp lại có hệ thống.
+Model tự xử lý được — khi train với đủ data, model RNN/LSTM học được các biến thể từ trong ngữ cảnh, không nhất thiết phải chuẩn hóa hết về dạng đúng chính tả.
