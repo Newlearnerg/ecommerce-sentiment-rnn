@@ -2,17 +2,17 @@
 * text=auto eol=lf
 
 # CSV data files - preserve UTF-8 encoding, use LF line endings
-*.csv text eol=lf working-tree-encoding=UTF-8
+*.csv text working-tree-encoding=UTF-8
 
 # Python source files
-*.py text eol=lf
+*.py text working-tree-encoding=UTF-8
 
 # Markdown and text
-*.md text eol=lf
-*.txt text eol=lf
+*.md  text working-tree-encoding=UTF-8
+*.txt text working-tree-encoding=UTF-8
 
 # Jupyter notebooks
-*.ipynb text eol=lf
+*.ipynb text working-tree-encoding=UTF-8
 
 # Binary files - do not modify
 *.png binary
