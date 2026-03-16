@@ -19,10 +19,13 @@ EMOJI_SENTIMENT_MAP = {
     "🎉" : "vui mừng",
     "🙏" : "cảm ơn",
     "🥳" : "vui",
+    "😀" : "vui",
     "💪" : "mạnh mẽ",
     "🆗" : "ổn",
+    "💔" : "không tốt",
     # Tiêu cực
     "😡" : "tức giận",
+    "💢💢" : "tức giận",
     "🤬" : "rất tức giận",
     "😤" : "bực bội",
     "😒" : "không hài lòng",
@@ -47,4 +50,5 @@ EMOJI_SENTIMENT_MAP = {
     "🚚" : "giao hàng",
     "💰" : "tiền",
     "💸" : "tốn tiền",
+    "🥴" : "mệt mỏi",
 }

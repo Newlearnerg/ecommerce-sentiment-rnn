@@ -31,12 +31,13 @@ def convert_emoji_to_text(text):
     result = []
     for char in text:
         if char in EMOJI_SENTIMENT_MAP:
-            result.append(EMOJI_SENTIMENT_MAP[char])
+            # Add padding spaces so mapped emoji words do not stick to neighbors.
+            result.append(f" {EMOJI_SENTIMENT_MAP[char]} ")
         elif char in emoji.EMOJI_DATA:
             pass  # Bỏ emoji không có trong dict
         else:
             result.append(char)
-    return " ".join(result)
+    return "".join(result)
 
 
 def decode_teencode(text):
