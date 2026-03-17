@@ -105,6 +105,44 @@ TEENCODE_DICT = {
     "luông" : "luôn",
     "nvtv"   : "nhân viên tư vấn",
     "lh"    : "liên hệ",
+    "mìh"   : "mình",
+    "hàg"   : "hàng",
+    "khug"  : "khung",
+    "cũg"   : "cũng",
+    "cah"   : "canh",
+    "c.bi"  : "chuẩn bị",
+    "đúg"   : "đúng",
+    "tưởg"  : "tưởng",
+    "đăg"   : "đăng",
+    "thg"   : "thằng",
+    "kh"    : "khách hàng",
+    "hn"    : "Hà nội",
+    "củng"  : "cũng",
+    "cais"  : "cái",
+    "lamf"  : "làm",
+    "char"  : "chả",
+    "giáo" : "giao",
+    "thaay": "thấy",
+    "om"    : "ôm",
+    "mồng"  : "mong",
+    "đủng"  : "đỉnh",
+    "th.viên"   : "thành viên",
+    "ah"    : "à",
+    "nta"   : "người ta",
+    "dcj"   : "được gì",
+    "mún"    : "muốn",
+    "nvien" : "nhân viên",
+    "aap"   : "app",
+    "hây"   : "hay",
+    "diễn rả"   : "diễn tả",
+    "mh" : "mình",
+    "ik"    :   "ý",
+
+
+    
+
+
+
     
     
     
@@ -140,9 +178,7 @@ TEENCODE_DICT = {
     "nản"     : "thất vọng",
     "tệ"      : "tệ",
     "chán"    : "thất vọng",
-    "ah"    : "à",
-    "nta"   : "người ta",
-    "dcj"   : "được gì",
+    
 
 
     # Chửi thề / Từ nhấn mạnh tiêu cực
@@ -155,6 +191,7 @@ TEENCODE_DICT = {
     "đmcs"    : "thất vọng tức giận",
     "má"      : "thất vọng tức giận",
     "djt"      : "thất vọng tức giận",
+    "đcmm" : "thất vọng tức giận",
     "vkl"     : "rất tệ",
     "cc"      : "rất tệ",
     "ccc"      : "rất tệ",
@@ -185,6 +222,16 @@ TEENCODE_DICT = {
     "dt"          : "điện thoại",
     "nhug"         : "nhưng",
     "ha.ch"        : "rất tệ",
+    "shjt"          : "rất tệ",
+    "con c" : "thất vọng tức giận",
+    "c*"    :   "thất vọng tức giận",
+    "conk@c" : "thất vọng tức giận",
+
+
+
+    
+
+    
 
 
 
