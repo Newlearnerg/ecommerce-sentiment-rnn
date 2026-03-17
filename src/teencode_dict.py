@@ -174,6 +174,8 @@ TEENCODE_DICT = {
     "fake"        : "hàng giả",
     "dt"          : "điện thoại",
     "nhug"         : "nhưng",
+    "con cat"    : "rất tệ",
+    "ha.ch"     : "rất tệ",
 
 
 
