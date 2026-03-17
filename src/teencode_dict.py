@@ -100,6 +100,15 @@ TEENCODE_DICT = {
     "tr"    : "trời",
     "dvkh"  : "dịch vụ khách hàng",
     "tmdt"  : "thương mại điện tử",
+    "nâu"   : "lâu",
+    "wa"    : "quá",
+    "luông" : "luôn",
+    "nvtv"   : "nhân viên tư vấn",
+    "lh"    : "liên hệ",
+    
+    
+    
+    
 
 
 
@@ -148,6 +157,7 @@ TEENCODE_DICT = {
     "djt"      : "thất vọng tức giận",
     "vkl"     : "rất tệ",
     "cc"      : "rất tệ",
+    "ccc"      : "rất tệ",
     "cặc"     : "rất tệ",
     "c.ặ.c"     : "rất tệ",
     "cac"     : "rất tệ",
@@ -174,6 +184,7 @@ TEENCODE_DICT = {
     "fake"        : "hàng giả",
     "dt"          : "điện thoại",
     "nhug"         : "nhưng",
+    "ha.ch"        : "rất tệ",
 
 
 
