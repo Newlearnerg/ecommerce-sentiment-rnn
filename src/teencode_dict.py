@@ -100,6 +100,14 @@ TEENCODE_DICT = {
     "tr"    : "trời",
     "dvkh"  : "dịch vụ khách hàng",
     "tmdt"  : "thương mại điện tử",
+    "bh"    : "bao giờ",
+    "ktx"   : "ký túc xá",
+    "vn"    : "Việt Nam",
+    "m.n"   : "mọi người",
+    "hk"    : "không",
+    "z"     : "vậy",
+    "trx"   : "trước",
+    "="     : "bằng",
 
 
 
@@ -116,7 +124,7 @@ TEENCODE_DICT = {
     "vl"      : "rất",
     "vch"     : "rất",
     "vcl"     : "rất",
-    "bt"      : "bình thường",
+    "bt"      : "biết",
     "bth"     : "bình thường",
     "hok"     : "không",
     "hem"     : "không có",
@@ -134,6 +142,15 @@ TEENCODE_DICT = {
     "ah"    : "à",
     "nta"   : "người ta",
     "dcj"   : "được gì",
+    "+"     : "và",
+    "mh"    : "mình",
+    "wa"    : "qua",
+    "ik"    : "đi",
+    "*"    : "sao", ##Check lai trung lap
+    "note"  : "lưu ý",
+    "n"     : "ngày",
+    "/"    : "phần",
+    
 
 
     # Chửi thề / Từ nhấn mạnh tiêu cực
@@ -150,6 +167,7 @@ TEENCODE_DICT = {
     "cc"      : "rất tệ",
     "cặc"     : "rất tệ",
     "c.ặ.c"     : "rất tệ",
+    "cẹc"     : "rất tệ",
     "cac"     : "rất tệ",
     "cak"     : "rất tệ",
     "cl"      : "rất tệ",
@@ -158,6 +176,7 @@ TEENCODE_DICT = {
     "lồn"     : "rất tệ",
     "đéo"     : "rất tệ",
     "đ"      : "rất tệ",
+    "del"     : "rất tệ",
     "éo"     : "rất tệ",
     "như l"     : "rất tệ",
     "đéo hiểu" : "rất tệ",
@@ -167,8 +186,11 @@ TEENCODE_DICT = {
     "qq"        : "rất tệ",
     "cứt"      : "tệ",
     "kít"      : "tệ",
+    "cmn"   : "tệ",
+    "dbrr"  : "tệ",
     "như c"      : "tệ",
     "nhu c"      : "tệ",
+    "như cứk"     : "tệ",
     "đầu bùi"    : "tệ",
     "đb"         : "tệ",
     "fake"        : "hàng giả",
@@ -187,5 +209,23 @@ TEENCODE_DICT = {
     "t6"      : "thứ sáu",
     "t7"      : "thứ bảy",
     "cn"      : "chủ nhật",
+    "thứ 2"     : "thứ hai",
+    "thứ 3"     : "thứ ba",
+    "thứ 4"     : "thứ tư",
+    "thứ 5"     : "thứ năm",
+    "thứ 6"     : "thứ sáu",
+    "thứ 7"     : "thứ bảy",
+    "thứ cn"    : "chủ nhật",
+    "0"       : "không",
+    "1"       : "một",
+    "2"       : "hai",
+    "3"       : "ba",
+    "4"       : "bốn",
+    "5"       : "năm",
+    "6"       : "sáu",
+    "7"       : "bảy",
+    "8"       : "tám",
+    "9"       : "chín",
+    "10"      : "mười"
     
 }

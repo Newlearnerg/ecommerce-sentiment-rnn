@@ -23,6 +23,8 @@ EMOJI_SENTIMENT_MAP = {
     "💪" : "mạnh mẽ",
     "🆗" : "ổn",
     "💔" : "không tốt",
+    "☆"    : "sao",
+    "⭐"    : "sao",
     # Tiêu cực
     "😡" : "tức giận",
     "💢💢" : "tức giận",
