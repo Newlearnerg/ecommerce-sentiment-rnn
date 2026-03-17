@@ -134,6 +134,7 @@ TEENCODE_DICT = {
     "ah"    : "à",
     "nta"   : "người ta",
     "dcj"   : "được gì",
+    ":)"   : "cười",
 
 
     # Chửi thề / Từ nhấn mạnh tiêu cực
