@@ -1,8 +1,8 @@
 # Handle line endings automatically
-* text=auto 
+* text=auto eol=lf
 
 # CSV data files - preserve UTF-8 encoding, use LF line endings
-*.csv text eol=lf
+*.csv text eol=lf working-tree-encoding=UTF-8
 
 # Python source files
 *.py text eol=lf
