@@ -100,6 +100,7 @@ TEENCODE_DICT = {
     "tr"    : "trời",
     "dvkh"  : "dịch vụ khách hàng",
     "tmdt"  : "thương mại điện tử",
+    "tmdt"  : "thương mại điện tử",
     "bh"    : "bao giờ",
     "ktx"   : "ký túc xá",
     "vn"    : "Việt Nam",
@@ -108,6 +109,7 @@ TEENCODE_DICT = {
     "z"     : "vậy",
     "trx"   : "trước",
     "="     : "bằng",
+    
 
 
 
@@ -150,12 +152,16 @@ TEENCODE_DICT = {
     "note"  : "lưu ý",
     "n"     : "ngày",
     "/"    : "phần",
+    "cmnr"  : "rồi",
+    "cmn rồi"  : "rồi",
+    "cmnd"  : "chứng minh nhân dân",
     
 
 
     # Chửi thề / Từ nhấn mạnh tiêu cực
     # Nhóm này là tín hiệu NEGATIVE rất mạnh — xem hướng dẫn annotation
     "dm"      : "thất vọng tức giận",
+    "d.m"      : "thất vọng tức giận",
     "đm"      : "thất vọng tức giận",
     "dmm"     : "thất vọng tức giận",
     "đmm"     : "thất vọng tức giận",
@@ -186,13 +192,19 @@ TEENCODE_DICT = {
     "qq"        : "rất tệ",
     "cứt"      : "tệ",
     "kít"      : "tệ",
-    "cmn"   : "tệ",
     "dbrr"  : "tệ",
+    "md"    : "không tốt",
     "như c"      : "tệ",
     "nhu c"      : "tệ",
     "như cứk"     : "tệ",
     "đầu bùi"    : "tệ",
+    "cđb"        : "tệ",
     "đb"         : "tệ",
+    "db"         : "tệ",
+    "ndb"        : "tệ",
+    "như đb"     : "tệ",
+    "nhu đb"     : "tệ",
+    "nđb"        : "tệ",
     "fake"        : "hàng giả",
     "dt"          : "điện thoại",
     "nhug"         : "nhưng",
