@@ -20,9 +20,13 @@ EMOJI_SENTIMENT_MAP = {
     "🙏" : "cảm ơn",
     "🥳" : "vui",
     "😀" : "vui",
+    "🤓" : "vui",
     "💪" : "mạnh mẽ",
     "🆗" : "ổn",
     "💔" : "không tốt",
+    "🤗" : "vui",
+    "🤣" : "vui",
+    
     # Tiêu cực
     "😡" : "tức giận",
     "💢💢" : "tức giận",
@@ -41,6 +45,8 @@ EMOJI_SENTIMENT_MAP = {
     "😭" : "rất buồn",
     "🤦" : "thất vọng",
     "😠" : "tức giận",
+    "🐶": "tức giận",  
+    "😏" : "không hài lòng",
     # Trung lập
     "🤔" : "suy nghĩ",
     "😐" : "bình thường",
@@ -51,4 +57,7 @@ EMOJI_SENTIMENT_MAP = {
     "💰" : "tiền",
     "💸" : "tốn tiền",
     "🥴" : "mệt mỏi",
+    "🙂" : "bình thường",
+    "😎" : "bình thường",
+    "😦" : "không hài lòng"
 }

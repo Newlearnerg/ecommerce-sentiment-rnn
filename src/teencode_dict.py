@@ -102,7 +102,6 @@ TEENCODE_DICT = {
     "tmdt"  : "thương mại điện tử",
     "nâu"   : "lâu",
     "wa"    : "quá",
-    "luông" : "luôn",
     "nvtv"   : "nhân viên tư vấn",
     "lh"    : "liên hệ",
     "mìh"   : "mình",
@@ -118,9 +117,6 @@ TEENCODE_DICT = {
     "kh"    : "khách hàng",
     "hn"    : "Hà nội",
     "củng"  : "cũng",
-    "cais"  : "cái",
-    "lamf"  : "làm",
-    "char"  : "chả",
     "giáo" : "giao",
     "thaay": "thấy",
     "om"    : "ôm",
@@ -132,11 +128,13 @@ TEENCODE_DICT = {
     "dcj"   : "được gì",
     "mún"    : "muốn",
     "nvien" : "nhân viên",
-    "aap"   : "app",
-    "hây"   : "hay",
-    "diễn rả"   : "diễn tả",
-    "mh" : "mình",
+    "aap"   : "ứng dụng",
     "ik"    :   "ý",
+    "z"    :   "gì",
+    "ròi"   :   "rồi",
+    "dt"     : "điện thoại",
+
+    
 
 
     
@@ -201,6 +199,7 @@ TEENCODE_DICT = {
     "cak"     : "rất tệ",
     "cl"      : "rất tệ",
     "lol"     : "rất tệ",
+    "loll"     : "rất tệ",
     "loz"      : "rất tệ",
     "lồn"     : "rất tệ",
     "đéo"     : "rất tệ",
@@ -216,17 +215,23 @@ TEENCODE_DICT = {
     "kít"      : "tệ",
     "như c"      : "tệ",
     "nhu c"      : "tệ",
+    "như cặc"      : "tệ",
     "đầu bùi"    : "tệ",
     "đb"         : "tệ",
     "fake"        : "hàng giả",
-    "dt"          : "điện thoại",
-    "nhug"         : "nhưng",
     "ha.ch"        : "rất tệ",
     "shjt"          : "rất tệ",
     "con c" : "thất vọng tức giận",
+    "con cu" : "thất vọng tức giận",
     "c*"    :   "thất vọng tức giận",
     "conk@c" : "thất vọng tức giận",
-
+    "đit" : "thất vọng tức giận",
+    "hạch" : "tệ",
+    "cailon ma m"      : "tệ",
+    "đau buôi" : "tệ",
+    "cặt" : "tệ",
+    
+    
 
 
     
