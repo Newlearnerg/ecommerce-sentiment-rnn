@@ -109,6 +109,10 @@ TEENCODE_DICT = {
     "z"     : "vậy",
     "trx"   : "trước",
     "="     : "bằng",
+    "ultr"  : "trời ơi",
+    "nph"   : "nhà phát hành",
+    "nxb"   : "nhà xuất bản",
+    "xh"    : "xã hội",
     
 
 
@@ -155,6 +159,10 @@ TEENCODE_DICT = {
     "cmnr"  : "rồi",
     "cmn rồi"  : "rồi",
     "cmnd"  : "chứng minh nhân dân",
+    "cug"   : "cũng",
+    "mjh"   : "mình",
+    "sip"   : "vận chuyển",
+    "ship"  : "vận chuyển",
     
 
 
