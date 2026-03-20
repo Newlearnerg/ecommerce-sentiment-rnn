@@ -11,7 +11,7 @@ from sklearn.metrics import (
 from sklearn.preprocessing import label_binarize
 
 
-CLASS_NAMES = ["Negative", "Neutral", "Positive"]
+CLASS_NAMES = ["Negative", "Neutral", "Positive", "Other"]
 RESULTS_DIR = "results"
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
@@ -57,7 +57,7 @@ def evaluate_model(model, X_test, y_test, model_name, history=None):
     plt.close()
 
     # 6. Precision-Recall Curve
-    y_bin = label_binarize(y_test, classes=[0, 1, 2])
+    y_bin = label_binarize(y_test, classes=list(range(len(CLASS_NAMES))))
     fig, ax = plt.subplots(figsize=(7, 5))
     for i, cls in enumerate(CLASS_NAMES):
         p, r, _ = precision_recall_curve(y_bin[:, i], y_prob[:, i])

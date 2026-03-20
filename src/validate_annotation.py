@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.metrics import cohen_kappa_score
 import os
 
-VALID_LABELS = {"positive", "negative", "neutral"}
+VALID_LABELS = {"positive", "negative", "neutral", "other"}
 
 
 def validate_annotation(input_path="data/annotation_done.csv",
@@ -14,6 +14,9 @@ def validate_annotation(input_path="data/annotation_done.csv",
     df["label"] = df["label"].str.strip().str.lower()
 
     invalid = df[~df["label"].isin(VALID_LABELS) & (df["label"].notna()) & (df["label"] != "")]
+    if "note" not in df.columns:
+        df["note"] = ""
+
     skipped = df[df["note"].str.lower().str.contains("skip", na=False)]
 
     print(f"✅ Tổng mẫu         : {len(df):,}")

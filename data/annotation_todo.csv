@@ -1,0 +1,3 @@
+﻿id,app,target_group,review,rating,word_count,date,label,note
+1,Shopee,neutral_candidate,ok,3,1,2025-01-01,,
+2,Tiki,positive_candidate,tot,5,1,2025-01-01,,

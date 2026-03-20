@@ -113,6 +113,8 @@ TEENCODE_DICT = {
     "nph"   : "nhà phát hành",
     "nxb"   : "nhà xuất bản",
     "xh"    : "xã hội",
+    "nhx"   : "nhưng",
+    "kcho"  : "không cho",
     
 
 
@@ -163,6 +165,24 @@ TEENCODE_DICT = {
     "mjh"   : "mình",
     "sip"   : "vận chuyển",
     "ship"  : "vận chuyển",
+    "nâu"   : "lâu",
+    "wa"    : "quá",
+    "nvtv"   : "nhân viên tư vấn",
+    "lh"    : "liên hệ",
+    "mìh"   : "mình",
+    "hàg"   : "hàng",
+    "khug"  : "khung",
+    "cũg"   : "cũng",
+    "cah"   : "canh",
+    "c.bi"  : "chuẩn bị",
+    "đúg"   : "đúng",
+    "tưởg"  : "tưởng",
+    "đăg"   : "đăng",
+    "thg"   : "thằng",
+    "hn"    : "Hà nội",
+    "củng"  : "cũng",
+    "nvien" : "nhân viên",
+    "aap"   : "ứng dụng",
     
 
 
@@ -216,6 +236,18 @@ TEENCODE_DICT = {
     "fake"        : "hàng giả",
     "dt"          : "điện thoại",
     "nhug"         : "nhưng",
+    "shjt"          : "rất tệ",
+    "con c" : "thất vọng tức giận",
+    "con cu" : "thất vọng tức giận",
+    "c*"    :   "thất vọng tức giận",
+    "conk@c" : "thất vọng tức giận",
+    "đit" : "thất vọng tức giận",
+    "hạch" : "tệ",
+    "cailon ma m"      : "tệ",
+    "đau buôi" : "tệ",
+    "cặt" : "tệ",
+    "dvvc" : "dịch vụ vận chuyển",
+
 
 
 

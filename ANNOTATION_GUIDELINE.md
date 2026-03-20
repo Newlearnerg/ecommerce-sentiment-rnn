@@ -7,12 +7,12 @@
 
 ## Quy tắc chung
 - Đọc KỸ nội dung cột `review` — **KHÔNG phụ thuộc vào cột `rating`**
-- Chỉ điền đúng 1 trong 3 giá trị vào cột `label`:
+- Chỉ điền đúng 1 trong 4 giá trị vào cột `label`:
   - `positive`
   - `negative`
   - `neutral`
+  - `other`
 - Nếu khó phân loại → ghi vào cột `note` để thảo luận
-- Nếu không phải tiếng Việt / spam / vô nghĩa → ghi `skip` vào cột `note`
 
 ---
 
@@ -41,7 +41,7 @@
 ---
 
 ## 😐 NEUTRAL — Trung lập
-> Review nhận xét khách quan, nửa khen nửa chê, không rõ cảm xúc
+> Review vừa khen vừa chê, không khen không chê, câu hỏi, off-topic, hoặc không thể hiện rõ cảm xúc tích cực/tiêu cực
 
 | Review | Label |
 |--------|-------|
@@ -49,6 +49,21 @@
 | "Bình thường, không có gì đặc biệt" | neutral |
 | "Tốt nhưng giao hàng hơi chậm so với trước" | neutral |
 | "ok v, bt thôi" | neutral |
+| "Bao giờ có mã free ship lại vậy?" | neutral |
+| "App này của hãng nào vậy?" | neutral |
+
+---
+
+## 🧩 OTHER — Spam / Vô nghĩa / Quảng cáo
+> Review không có giá trị cảm xúc rõ ràng vì là spam, quảng cáo, nội dung vô nghĩa, lặp ký tự, hoặc rất khó hiểu
+
+| Review | Label |
+|--------|-------|
+| "ib zalo 09xxxxxxxx để mua giá tốt" | other |
+| "🔥🔥🔥 click link nhận quà" | other |
+| "asdfghjkl qwerty" | other |
+| "...." | other |
+| "👍👍👍" | other |
 
 ---
 
@@ -62,13 +77,13 @@
 | "Cũng không đến nỗi" | neutral | Mơ hồ |
 
 ### 2. Review 2 chiều (khen + chê)
-> → Nhìn vào **cảm xúc chủ đạo**, phần nào được nhấn mạnh hơn
+> → Theo quy định hiện tại: **đều gán `neutral`**
 
 | Review | Label | Giải thích |
 |--------|-------|------------|
-| "App đẹp nhưng **hàng giả, mất tiền oan**" | negative | Vế tiêu cực mạnh hơn |
-| "Có vài lỗi nhỏ nhưng **nhìn chung rất tốt**" | positive | Vế tích cực mạnh hơn |
-| "Tốt có, xấu có, tùy người dùng" | neutral | Không rõ chiều |
+| "App đẹp nhưng hàng giả, mất tiền oan" | neutral | Có cả khen và chê |
+| "Có vài lỗi nhỏ nhưng nhìn chung rất tốt" | neutral | Có cả khen và chê |
+| "Tốt có, xấu có, tùy người dùng" | neutral | Có cả hai chiều |
 
 ### 3. Teencode & Emoji
 | Review | Label |
@@ -127,3 +142,6 @@
 - Nội dung không liên quan đến app
 - Spam / quảng cáo
 - Review chỉ có 1-2 từ không rõ nghĩa
+
+> Lưu ý: theo bộ nhãn mới, các trường hợp spam/quảng cáo/vô nghĩa ưu tiên gán `other` thay vì `skip`.
+> Chỉ dùng `skip` khi mẫu bị lỗi dữ liệu hoặc không thể đọc được hoàn toàn.

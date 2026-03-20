@@ -6,7 +6,7 @@ from tensorflow.keras.layers import (
 )
 
 
-def build_model(model_type, embedding_layer, num_classes=3):
+def build_model(model_type, embedding_layer, num_classes=4):
     """
     Xây dựng model theo loại.
     model_type: 'RNN' | 'LSTM' | 'GRU' | 'BiLSTM' | 'CNN_BiLSTM'

@@ -53,7 +53,19 @@ python src/export_for_annotation.py
 python src/preprocessing_full.py
 ```
 
-### 5. Train & Đánh giá mô hình
+### 5. Chuẩn hóa dữ liệu chính
+```bash
+python src/prepare_main_dataset.py
+```
+> Tạo file sạch `data/data_main_clean.csv` từ dữ liệu chính, loại cột dư và chuẩn hóa nhãn
+
+### 6. EDA trước khi train
+```bash
+python src/eda_sentiment_4class.py
+```
+> Script sẽ tạo biểu đồ phân bố nhãn, độ dài câu, app x label, rating x label vào thư mục `results/`
+
+### 7. Train & Đánh giá mô hình
 > Xem notebooks trong thư mục `notebooks/`
 
 ## 📊 Chiến lược dán nhãn
@@ -62,7 +74,8 @@ python src/preprocessing_full.py
 |------|---------|-------|
 | `positive` | Hài lòng, khen ngợi | "App mượt, giao hàng nhanh 👍" |
 | `negative` | Không hài lòng, phàn nàn | "Hàng giả, thất vọng 🤬" |
-| `neutral`  | Trung lập, không rõ cảm xúc | "Bình thường, không đặc biệt" |
+| `neutral`  | Vừa khen vừa chê, không khen không chê, câu hỏi/off-topic | "Tốt nhưng giao hơi chậm", "Bao giờ có mã giảm giá?" |
+| `other`    | Spam, quảng cáo, nội dung vô nghĩa/khó hiểu | "ib zalo 09xx", "asdfgh", "🔥🔥🔥" |
 
 > ⚠️ Dán nhãn **dựa trên nội dung văn bản**, KHÔNG phụ thuộc vào số sao rating
 
