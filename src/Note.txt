@@ -1,0 +1,40 @@
+- Có một số đánh giá viết sai như "muốn" thành "mướn" hoặc gõ nhầm như "tooi khoong thicsh" không phải chỗ để xử lý, vì:
+
+Không thể liệt kê hết — typo ngẫu nhiên có vô số biến thể, không ai gõ sai theo một pattern cố định.
+Sai chính tả ≠ teencode — teencode là cách viết tắt có chủ ý, được cộng đồng dùng lặp lại. Typo là lỗi không chủ ý, không lặp lại có hệ thống.
+Model tự xử lý được — khi train với đủ data, model RNN/LSTM học được các biến thể từ trong ngữ cảnh, không nhất thiết phải chuẩn hóa hết về dạng đúng chính tả.
+
+-------------
+Những gì đã sửa:
+
+Gỡ mapping 1 ký tự gây nhiễu mạnh:
+xóa m -> mình
+Gỡ xung đột/đè key:
+xóa bản trùng acc
+xóa bản trùng vch có nghĩa khác
+Gỡ key đa nghĩa dễ sai ngữ cảnh:
+bỏ cl ở nhóm cảm xúc chung, giữ cl ở nhóm chửi thề để tránh xung đột
+File đã chỉnh:
+src/teencode_dict.py
+src/preprocessing_full.py (đã sửa trước đó để không tách ký tự khi xử lý emoji)
+Tôi đã xuất bản dữ liệu sau khi tinh chỉnh tại:
+
+data/reviews_raw_normalized_v4.csv
+Kết quả mẫu hiện đã tự nhiên hơn, ví dụ:
+
+d. m đặt phải xác minh chịu rồi
+khi tôi cần ... mà sao không tìm được ... rất tức giận
+
+================================
+
+Pipeline hiện tại ở src/preprocessing_full.py chỉ chuẩn hóa Unicode, teencode, emoji, ký tự lặp, dấu câu.
+Chưa có bước sửa lỗi chính tả kiểu gõ sai dấu (cânf) hay thiếu dấu (che).
+Nên làm gì thực tế:
+
+Không thêm các lỗi gõ ngẫu nhiên vào từ điển.
+Chỉ thêm vào từ điển ở src/teencode_dict.py khi lỗi đó lặp lại nhiều và ổn định (ví dụ xuất hiện rất nhiều lần cùng một kiểu).
+Nếu bạn muốn, tôi có thể thêm một bước “chuẩn hóa lỗi gõ dấu phổ biến” trước decode_teencode trong src/preprocessing_full.py để tự sửa một nhóm lỗi hay gặp như cânf -> cần, ko -> không, dc -> được tốt hơn.
+
+=================================
+
+Check xem co can chuyen tieng anh ve tieng viet khong ? vd voucher, ok
