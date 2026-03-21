@@ -22,8 +22,10 @@ ecommerce-sentiment-rnn/
 │   ├── export_for_annotation.py ← Xuất CSV để dán nhãn tay
 │   ├── validate_annotation.py   ← Kiểm tra file CSV đã dán nhãn
 │   ├── word_embeddings.py       ← 4 chiến lược Word Embedding
-│   ├── models_all.py            ← 5 kiến trúc model
-│   └── evaluation_full.py       ← Đánh giá toàn diện
+│   ├── models_all.py            ← Các kiến trúc model (RNN/LSTM/GRU/Attention/Transformer)
+│   ├── train_embeddings_attention.py ← Script train full embeddings x models
+│   ├── evaluation_full.py       ← Đánh giá toàn diện + lưu theo folder từng model
+│   └── prepare_main_dataset.py  ← Clean/split/balance dữ liệu chính
 ├── ANNOTATION_GUIDELINE.md      ← Hướng dẫn dán nhãn tay
 ├── requirements.txt
 └── README.md
@@ -74,9 +76,22 @@ python src/eda_sentiment_4class.py
 
 ### 7. Train & Đánh giá mô hình
 ```bash
-python src/train_embeddings_attention.py --embeddings 1,2,3,4 --models BiLSTM,BiLSTM_Attention,CNN_BiLSTM_Attention
+python src/train_embeddings_attention.py --epochs 10 --fasttext_path /path/to/cc.vi.300.bin
 ```
-> Nếu dùng FastText (embedding 3,4), thêm `--fasttext_path /path/to/cc.vi.300.bin`
+> Mặc định script đang ở chế độ **1 người chạy toàn bộ**: chạy full embeddings (1,2,3,4) x full models.
+> Nếu chưa có FastText, có thể chỉ chạy embeddings 1,2:
+>
+> `python src/train_embeddings_attention.py --embeddings 1,2 --epochs 10`
+
+### 8. Kết quả đầu ra
+- Mỗi run model được lưu riêng:
+`results/<run_name>/` (metrics, report, plots)
+`models/<run_name>/` (checkpoint/model)
+- Kết quả tổng hợp toàn bộ model:
+`results/model_comparison.csv`
+`results/model_comparison.png`
+`results/fps_vs_accuracy.png`
+`results/training_time_comparison.png`
 
 ## 📊 Chiến lược dán nhãn
 
@@ -96,10 +111,14 @@ python src/train_embeddings_attention.py --embeddings 1,2,3,4 --models BiLSTM,Bi
 | RNN | Baseline đơn giản |
 | LSTM | Xử lý long-range dependency |
 | GRU | Nhẹ hơn LSTM, nhanh hơn |
-| BiLSTM | Đọc cả 2 chiều |
-| CNN + BiLSTM | Kết hợp trích xuất đặc trưng cục bộ |
-| BiLSTM + Attention | BiLSTM với cơ chế chú ý |
-| CNN + BiLSTM + Attention | Kết hợp CNN-BiLSTM và Attention |
+| BiLSTM | Đọc 2 chiều với LSTM |
+| BiGRU | Đọc 2 chiều với GRU |
+| CNN_BiLSTM | CNN + BiLSTM |
+| CNN_BiGRU | CNN + BiGRU |
+| BiLSTM_DotAttention | BiLSTM + Dot Attention |
+| CNN_BiLSTM_DotAttention | CNN + BiLSTM + Dot Attention |
+| TransformerEncoder | Encoder Transformer |
+| CNN_TransformerEncoder | CNN + Transformer Encoder |
 
 ## 📦 Word Embeddings
 
