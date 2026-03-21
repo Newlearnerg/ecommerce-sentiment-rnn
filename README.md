@@ -134,6 +134,6 @@ python src/train_embeddings_attention.py --epochs 10 --fasttext_path /path/to/cc
 | App | CH Play |
 |-----|---------|
 | Shopee | https://play.google.com/store/apps/details?id=com.shopee.vn |
-| Tiki | https://play.google.com/store/apps/details?id=vn.tiki.android |
+| Tiki | https://play.google.com/store/details?id=vn.tiki.app.tikiandroid |
 | Lazada | https://play.google.com/store/apps/details?id=com.lazada.android |
-| Sendo | https://play.google.com/store/apps/details?id=vn.sendo.app |
+| Sendo | https://play.google.com/store/apps/details?id=com.sendo |
