@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-DATA_PATH = "data/Bản sao của data_new.csv"
+DATA_PATH = "data/data_final.csv"
 CLEAN_DATA_PATH = "data/data_main_clean.csv"
 RESULTS_DIR = "results"
 VALID_LABELS = ["negative", "neutral", "positive", "other"]

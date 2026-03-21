@@ -37,7 +37,7 @@ def build_embedding_matrix(word_index, gensim_model, embed_dim, vocab_size=VOCAB
 def get_random_embedding(vocab_size=VOCAB_SIZE, embed_dim=EMBED_DIM, max_len=MAX_LEN):
     return Embedding(
         input_dim=vocab_size, output_dim=embed_dim,
-        input_length=max_len, trainable=True, name="random_embedding"
+        trainable=True, name="random_embedding"
     )
 
 

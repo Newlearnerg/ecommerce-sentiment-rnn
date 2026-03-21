@@ -57,7 +57,14 @@ python src/preprocessing_full.py
 ```bash
 python src/prepare_main_dataset.py
 ```
-> Tạo file sạch `data/data_main_clean.csv` từ dữ liệu chính, loại cột dư và chuẩn hóa nhãn
+> Hiển thị dữ liệu trước cân bằng, cân bằng 4 lớp, lưu:
+> - `data/data_main_clean.csv`
+> - `data/data_main_train.csv`
+> - `data/data_main_test.csv`
+> - `data/data_main_train_balanced.csv`
+> - `results/balance_before_after_counts.png`
+> - `results/balance_before_after_word_count.png`
+> Quy trình: split train/test trước, chỉ cân bằng tập train
 
 ### 6. EDA trước khi train
 ```bash
@@ -66,7 +73,10 @@ python src/eda_sentiment_4class.py
 > Script sẽ tạo biểu đồ phân bố nhãn, độ dài câu, app x label, rating x label vào thư mục `results/`
 
 ### 7. Train & Đánh giá mô hình
-> Xem notebooks trong thư mục `notebooks/`
+```bash
+python src/train_embeddings_attention.py --embeddings 1,2,3,4 --models BiLSTM,BiLSTM_Attention,CNN_BiLSTM_Attention
+```
+> Nếu dùng FastText (embedding 3,4), thêm `--fasttext_path /path/to/cc.vi.300.bin`
 
 ## 📊 Chiến lược dán nhãn
 
@@ -88,6 +98,8 @@ python src/eda_sentiment_4class.py
 | GRU | Nhẹ hơn LSTM, nhanh hơn |
 | BiLSTM | Đọc cả 2 chiều |
 | CNN + BiLSTM | Kết hợp trích xuất đặc trưng cục bộ |
+| BiLSTM + Attention | BiLSTM với cơ chế chú ý |
+| CNN + BiLSTM + Attention | Kết hợp CNN-BiLSTM và Attention |
 
 ## 📦 Word Embeddings
 

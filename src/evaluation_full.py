@@ -13,12 +13,32 @@ from sklearn.preprocessing import label_binarize
 
 CLASS_NAMES = ["Negative", "Neutral", "Positive", "Other"]
 RESULTS_DIR = "results"
+MODELS_DIR = "models"
 os.makedirs(RESULTS_DIR, exist_ok=True)
+os.makedirs(MODELS_DIR, exist_ok=True)
 
 
-def evaluate_model(model, X_test, y_test, model_name, history=None):
+def _prepare_run_dirs(model_name):
+    run_results_dir = os.path.join(RESULTS_DIR, model_name)
+    run_models_dir = os.path.join(MODELS_DIR, model_name)
+    os.makedirs(run_results_dir, exist_ok=True)
+    os.makedirs(run_models_dir, exist_ok=True)
+    return run_results_dir, run_models_dir
+
+
+def evaluate_model(
+    model,
+    X_test,
+    y_test,
+    model_name,
+    history=None,
+    train_time_sec=None,
+    train_samples=None,
+    train_epochs=None,
+):
     """Đánh giá model toàn diện và lưu kết quả"""
     results = {}
+    run_results_dir, run_models_dir = _prepare_run_dirs(model_name)
 
     # 1. Predict + đo thời gian inference
     t0     = time.time()
@@ -39,12 +59,26 @@ def evaluate_model(model, X_test, y_test, model_name, history=None):
     results["f1"]        = round(report["macro avg"]["f1-score"], 4)
 
     # 3. Kích thước model
-    model_path = f"models/{model_name}.h5"
+    model_path = os.path.join(run_models_dir, f"{model_name}.keras")
     model.save(model_path)
     results["model_size_mb"] = round(os.path.getsize(model_path) / (1024 * 1024), 2)
+    results["trainable_params"] = int(model.count_params())
 
     # 4. FPS
     results["fps"] = round(len(X_test) / t_infer, 1)
+    results["inference_time_sec"] = round(t_infer, 3)
+
+    # 4.1 Training performance
+    if train_time_sec is not None and train_time_sec > 0:
+        results["train_time_sec"] = round(train_time_sec, 2)
+        if train_samples is not None:
+            results["train_samples_per_sec"] = round(train_samples / train_time_sec, 1)
+        if train_epochs is not None and train_epochs > 0:
+            results["sec_per_epoch"] = round(train_time_sec / train_epochs, 2)
+    else:
+        results["train_time_sec"] = np.nan
+        results["train_samples_per_sec"] = np.nan
+        results["sec_per_epoch"] = np.nan
 
     # 5. Confusion Matrix
     cm = confusion_matrix(y_test, y_pred)
@@ -53,7 +87,7 @@ def evaluate_model(model, X_test, y_test, model_name, history=None):
                 xticklabels=CLASS_NAMES, yticklabels=CLASS_NAMES)
     plt.title(f"Confusion Matrix — {model_name}")
     plt.tight_layout()
-    plt.savefig(f"{RESULTS_DIR}/cm_{model_name}.png", dpi=120)
+    plt.savefig(os.path.join(run_results_dir, "confusion_matrix.png"), dpi=120)
     plt.close()
 
     # 6. Precision-Recall Curve
@@ -67,7 +101,7 @@ def evaluate_model(model, X_test, y_test, model_name, history=None):
     ax.set_title(f"Precision-Recall Curve — {model_name}")
     ax.legend()
     plt.tight_layout()
-    plt.savefig(f"{RESULTS_DIR}/pr_curve_{model_name}.png", dpi=120)
+    plt.savefig(os.path.join(run_results_dir, "precision_recall_curve.png"), dpi=120)
     plt.close()
 
     # 7. ROC-AUC Curve
@@ -81,7 +115,7 @@ def evaluate_model(model, X_test, y_test, model_name, history=None):
     ax.set_title(f"ROC-AUC Curve — {model_name}")
     ax.legend()
     plt.tight_layout()
-    plt.savefig(f"{RESULTS_DIR}/roc_{model_name}.png", dpi=120)
+    plt.savefig(os.path.join(run_results_dir, "roc_curve.png"), dpi=120)
     plt.close()
 
     # 8. Training curves
@@ -96,12 +130,21 @@ def evaluate_model(model, X_test, y_test, model_name, history=None):
         axes[1].set_title(f"Accuracy — {model_name}")
         axes[1].legend()
         plt.tight_layout()
-        plt.savefig(f"{RESULTS_DIR}/curve_{model_name}.png", dpi=120)
+        plt.savefig(os.path.join(run_results_dir, "training_curves.png"), dpi=120)
         plt.close()
 
+        # 9. Save per-model report for easier inspection
+        report_df = pd.DataFrame(report).transpose()
+        report_df.to_csv(os.path.join(run_results_dir, "classification_report.csv"), index=True)
+
+        metrics_row = pd.DataFrame([results])
+        metrics_row.to_csv(os.path.join(run_results_dir, "metrics.csv"), index=False)
+
     print(f"\n[{model_name}] Acc={results['accuracy']:.4f} | "
-          f"F1={results['f1']:.4f} | FPS={results['fps']} | "
-          f"Size={results['model_size_mb']}MB")
+            f"F1={results['f1']:.4f} | FPS={results['fps']} | "
+            f"Train={results['train_time_sec']}s | "
+            f"Params={results['trainable_params']:,} | "
+            f"Size={results['model_size_mb']}MB")
     return results
 
 
@@ -127,6 +170,17 @@ def compare_all_models(all_results):
     plt.tight_layout()
     plt.savefig(f"{RESULTS_DIR}/model_comparison.png", dpi=150)
     plt.close()
+
+    # Training time comparison
+    if "train_time_sec" in df.columns and df["train_time_sec"].notna().any():
+        plt.figure(figsize=(10, 6))
+        bars = plt.barh(df["model"], df["train_time_sec"], color="#16a085")
+        plt.title("Training Time by Model")
+        plt.xlabel("Seconds")
+        plt.bar_label(bars, fmt="%.1f", padding=3)
+        plt.tight_layout()
+        plt.savefig(f"{RESULTS_DIR}/training_time_comparison.png", dpi=150)
+        plt.close()
 
     # FPS vs Accuracy (trade-off)
     plt.figure(figsize=(8, 6))
